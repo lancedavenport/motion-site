@@ -1,6 +1,7 @@
 import logo from "./assets/white_logo.png";
 import moneyGif from "./assets/falling_money.gif";
 import mainVideo from "./assets/main_video.gif";
+import spiralGif from "./assets/motion-spiral.gif";
 import xIcon from "./assets/x_icon.png";
 
 const MainMotionComponent = () => {
@@ -25,6 +26,13 @@ const MainMotionComponent = () => {
         src={moneyGif}
         alt="Falling Money"
         className="absolute top-0 left-0 w-full h-full object-cover opacity-80"
+      />
+
+      {/* Spiral GIF - Above and to the right of "MOTION MOTION" */}
+      <img
+        src={spiralGif}
+        alt="Spiral Motion"
+        className="absolute top-10 right-10 md:top-16 md:right-16 w-28 md:w-36"
       />
 
       {/* Centered Content */}

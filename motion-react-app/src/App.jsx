@@ -1,5 +1,6 @@
 import background from "./assets/background.png";
 import MainMotionComponent from "./MainMotionComponent";
+import MotionTextComponent from "./MotionTextComponent"; // Import the new component
 
 function App() {
   return (
@@ -9,8 +10,11 @@ function App() {
         backgroundImage: `url(${background})`,
       }}
     >
-      {/* Main Component */}
+      {/* Main Motion Component */}
       <MainMotionComponent />
+
+      {/* Motion Text Component */}
+      <MotionTextComponent />
     </div>
   );
 }
