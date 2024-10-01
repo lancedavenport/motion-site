@@ -5,7 +5,7 @@ import number3 from "./assets/number_3.png"; // Number 3 graphic
 
 const BuyMotionComponent = () => {
   return (
-    <div className="relative w-full min-h-screen flex flex-col md:flex-row items-start justify-between px-8 md:px-16 lg:px-24 py-16">
+    <div className="relative w-full min-h-screen px-8 md:px-16 lg:px-24 py-16 flex flex-col md:flex-row">
       {/* Text Content */}
       <div className="text-white max-w-2xl">
         {/* Heading */}
@@ -27,9 +27,9 @@ const BuyMotionComponent = () => {
                 DOWNLOAD A WALLET.
               </h3>
               <p className="text-white">
-                Download a Phantom wallet on browser extension or on the
-                appstore. This wallet will act as a digital safe where you can
-                keep your $MOTION tokens & interact with Ethereum activities.
+                Download a Phantom wallet on browser extension or on the app
+                store. This wallet will act as a digital safe where you can keep
+                your $MOTION tokens & interact with Ethereum activities.
               </p>
             </div>
           </div>
@@ -47,7 +47,7 @@ const BuyMotionComponent = () => {
               </h3>
               <p className="text-white">
                 Purchase Ethereum within the Phantom wallet itself (using
-                moonpay), or use an exchange to deposit Ethereum into your
+                MoonPay), or use an exchange to deposit Ethereum into your
                 wallet address.
               </p>
             </div>
@@ -73,12 +73,21 @@ const BuyMotionComponent = () => {
         </div>
       </div>
 
-      {/* Right GIF */}
-      <div className="w-full md:w-auto flex justify-center mt-8 md:mt-0">
+      {/* Right GIF for larger screens */}
+      <div className="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 w-[20rem] md:w-[35rem] lg:w-[40rem] h-auto">
         <img
           src={rightGif}
           alt="Motion Circle Right Loop"
-          className="w-64 md:w-[35rem] lg:w-[40rem] h-auto"
+          className="w-full h-auto"
+        />
+      </div>
+
+      {/* Right GIF for mobile devices */}
+      <div className="md:hidden mt-8 flex justify-center">
+        <img
+          src={rightGif}
+          alt="Motion Circle Right Loop"
+          className="w-64 h-auto"
         />
       </div>
     </div>

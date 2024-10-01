@@ -9,7 +9,7 @@ const MotionTextComponent = () => {
         <img
           src={doughnutGif}
           alt="Motion Doughnut"
-          className="w-64 md:w-[30rem] lg:w-[50rem] h-auto"
+          className="w-64 md:w-[30rem] lg:w-[60rem] h-auto"
         />
       </div>
 
