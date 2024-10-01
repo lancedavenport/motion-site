@@ -2,8 +2,23 @@ import pieChart from "./assets/pie_chart.png"; // Pie chart image
 import motionGif from "./assets/motion_linear_horizontal.gif"; // Motion linear GIF
 import globeGif from "./assets/motion_globe_white.gif"; // Globe GIF
 import tokenomicsInfo from "./assets/tokenomics_info.png"; // Tokenomics info image
+import chartButton from "./assets/chart_button.gif"; // Chart button GIF
+import buyButton from "./assets/buy_button.gif"; // Buy button GIF
+import copyIcon from "./assets/copy_icon.png"; // Copy icon
+import { useState } from "react"; // Import useState for copy functionality
 
 const TokenomicsComponent = () => {
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const contractAddress = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+
+  // Function to copy contract address to clipboard
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(contractAddress);
+    setCopySuccess(true);
+    setTimeout(() => setCopySuccess(false), 2000); // Reset after 2 seconds
+  };
+
   return (
     <div className="relative w-full min-h-screen text-white flex flex-col items-center justify-center px-8 md:px-16 lg:px-24 py-32">
       {/* Motion GIF at the top */}
@@ -26,6 +41,11 @@ const TokenomicsComponent = () => {
 
       {/* Content Area */}
       <div className="relative z-30 w-full flex flex-col items-center justify-center space-y-16 mt-40">
+        {/* Tokenomics Header */}
+        <h3 className="text-4xl font-bold text-white tracking-wider">
+          TOKENOMICS
+        </h3>
+
         {/* Pie Chart and Tokenomics Section */}
         <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl space-y-16 lg:space-y-0">
           {/* Pie Chart */}
@@ -48,17 +68,46 @@ const TokenomicsComponent = () => {
         </div>
 
         {/* Contract Address and Buttons */}
-        <div className="w-full text-center space-y-6">
-          <p className="font-mono text-white text-base md:text-lg tracking-widest">
-            CONTRACT ADDRESS: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          </p>
+        <div className="w-full flex flex-col items-center space-y-6">
+          {/* Contract Address */}
+          <div
+            className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 rounded-lg border border-white flex items-center space-x-2 cursor-pointer"
+            onClick={copyToClipboard}
+          >
+            <p className="text-sm md:text-lg font-mono tracking-wider">
+              CA: {contractAddress}
+            </p>
+            <img
+              src={copyIcon}
+              alt="Copy Icon"
+              className="w-4 h-4 md:w-5 md:h-5"
+            />
+          </div>
+
+          {/* Copy success message */}
+          {copySuccess && (
+            <p className="text-green-400 mt-2 text-sm">Copied to clipboard!</p>
+          )}
+
+          {/* Buttons with GIFs */}
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
-            <button className="bg-black/80 border border-gray-600 text-white py-2 px-6 rounded-full hover:bg-gray-800 transition-all duration-200">
-              BUY $MOTION
-            </button>
-            <button className="bg-black/80 border border-gray-600 text-white py-2 px-6 rounded-full hover:bg-gray-800 transition-all duration-200">
-              $MOTION CHART
-            </button>
+            {/* Buy Motion Button */}
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img
+                src={buyButton}
+                alt="Buy Motion Button"
+                className="w-24 h-auto md:w-28 lg:w-32"
+              />
+            </a>
+
+            {/* Motion Chart Button */}
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img
+                src={chartButton}
+                alt="Motion Chart Button"
+                className="w-24 h-auto md:w-28 lg:w-32"
+              />
+            </a>
           </div>
         </div>
       </div>

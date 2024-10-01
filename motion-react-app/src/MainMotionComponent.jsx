@@ -3,7 +3,7 @@ import logo from "./assets/white_logo.png";
 import moneyGif from "./assets/falling_money.gif";
 import mainVideo from "./assets/main_video.gif"; // Main Motion Video GIF for center
 import spiralGif from "./assets/motion-spiral.gif";
-// import motionGlobeSlow from "./assets/motion_globe_slow.gif"; // Import new globe GIF
+import motionGlobeSlow from "./assets/motion_globe_slow.gif"; // Import new globe GIF
 import telegramButton from "./assets/telegram_button.gif"; // Telegram button GIF
 import chartButton from "./assets/chart_button.gif"; // Chart button GIF
 import twitterButton from "./assets/twitter_button.gif"; // Twitter button GIF
@@ -113,12 +113,12 @@ const MainMotionComponent = () => {
         </div>
       </div>
 
-      {/* Motion Globe Slow GIF - Now positioned at the bottom-left of the component */}
-      {/* <img
+      {/* Motion Globe Slow GIF - Parallel to Spiral GIF, Bottom-left and twice the size */}
+      <img
         src={motionGlobeSlow}
         alt="Motion Globe Slow"
-        className="absolute bottom-5 left-8 w-16 md:w-24 lg:w-32"
-      /> */}
+        className="absolute bottom-5 left-2 md:bottom-16 md:left-16 w-40 md:w-72 lg:w-80 mt-10"
+      />
     </div>
   );
 };
