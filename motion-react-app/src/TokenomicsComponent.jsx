@@ -30,8 +30,8 @@ const TokenomicsComponent = () => {
         />
       </div>
 
-      {/* Globe GIF in the background */}
-      <div className="absolute bottom-0 left-0 w-full h-full opacity-20">
+      {/* Globe GIF in the background - shifted down and to the left */}
+      <div className="absolute bottom-[-100px] left-[-250px] w-full h-full opacity-20">
         <img
           src={globeGif}
           alt="Globe"

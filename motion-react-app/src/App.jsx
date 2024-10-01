@@ -121,9 +121,13 @@ function App() {
       }}
     >
       <div className="flex-grow">
+        {/* Add spacing between components */}
         <MainMotionComponent />
+        <div className="my-20" /> {/* Add spacing */}
         <MotionTextComponent />
+        <div className="my-20 pt-20" /> {/* Add spacing */}
         <BuyMotionComponent />
+        <div className="my-20 pt-20" /> {/* Add spacing */}
         <TokenomicsComponent />
       </div>
       <FooterComponent />
