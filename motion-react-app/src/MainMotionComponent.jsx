@@ -1,12 +1,26 @@
+import { useState } from "react"; // Import useState hook for copy functionality
 import logo from "./assets/white_logo.png";
 import moneyGif from "./assets/falling_money.gif";
 import mainVideo from "./assets/main_video.gif"; // Main Motion Video GIF for center
 import spiralGif from "./assets/motion-spiral.gif";
+// import motionGlobeSlow from "./assets/motion_globe_slow.gif"; // Import new globe GIF
 import telegramButton from "./assets/telegram_button.gif"; // Telegram button GIF
 import chartButton from "./assets/chart_button.gif"; // Chart button GIF
 import twitterButton from "./assets/twitter_button.gif"; // Twitter button GIF
+import copyIcon from "./assets/copy_icon.png"; // Import the copy icon
 
 const MainMotionComponent = () => {
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const contractAddress = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+
+  // Function to copy contract address to clipboard
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(contractAddress);
+    setCopySuccess(true);
+    setTimeout(() => setCopySuccess(false), 2000); // Reset after 2 seconds
+  };
+
   return (
     <div className="relative w-full min-h-screen flex flex-col items-center justify-center">
       {/* Top logo */}
@@ -39,17 +53,28 @@ const MainMotionComponent = () => {
         />
 
         {/* Contract Address */}
-        <div className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 mt-6 rounded-lg">
-          <p className="text-sm md:text-lg font-mono">
-            CA: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          </p>
+        <div
+          className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 mt-6 rounded-lg border border-white flex items-center space-x-2 cursor-pointer"
+          onClick={copyToClipboard}
+        >
+          <p className="text-sm md:text-lg font-mono">CA: {contractAddress}</p>
+          <img
+            src={copyIcon}
+            alt="Copy Icon"
+            className="w-4 h-4 md:w-5 md:h-5"
+          />
         </div>
+
+        {/* Copy success message */}
+        {copySuccess && (
+          <p className="text-green-400 mt-2 text-sm">Copied to clipboard!</p>
+        )}
 
         {/* Buttons with GIFs */}
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 mt-6">
           {/* Telegram Button */}
           <a
-            href="https://t.me/yourtelegram"
+            href="https://t.me/motioncoineth"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -75,7 +100,7 @@ const MainMotionComponent = () => {
 
           {/* Twitter Button */}
           <a
-            href="https://twitter.com/yourtwitter"
+            href="https://x.com/motioncoineth"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -87,6 +112,13 @@ const MainMotionComponent = () => {
           </a>
         </div>
       </div>
+
+      {/* Motion Globe Slow GIF - Now positioned at the bottom-left of the component */}
+      {/* <img
+        src={motionGlobeSlow}
+        alt="Motion Globe Slow"
+        className="absolute bottom-5 left-8 w-16 md:w-24 lg:w-32"
+      /> */}
     </div>
   );
 };
