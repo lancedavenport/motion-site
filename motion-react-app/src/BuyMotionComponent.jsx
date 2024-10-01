@@ -5,25 +5,25 @@ import number3 from "./assets/number_3.png"; // Number 3 graphic
 
 const BuyMotionComponent = () => {
   return (
-    <div className="relative w-full min-h-screen flex items-start justify-between px-8 md:px-16 lg:px-24 py-16">
+    <div className="relative w-full min-h-screen flex flex-col md:flex-row items-start justify-between px-8 md:px-16 lg:px-24 py-16">
       {/* Text Content */}
       <div className="text-white max-w-2xl">
         {/* Heading */}
-        <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-red-500 via-green-500 to-blue-500 text-transparent bg-clip-text mb-12">
+        <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-red-500 via-green-500 to-blue-500 text-transparent bg-clip-text mb-8">
           HOW TO BUY $MOTION?
         </h1>
 
         {/* Steps */}
-        <div className="space-y-12 text-lg md:text-xl">
+        <div className="space-y-8 text-base md:text-xl">
           {/* Step 1 */}
           <div className="flex items-start space-x-4">
             <img
               src={number1}
               alt="Number 1"
-              className="w-12 md:w-16 lg:w-20"
+              className="w-10 md:w-16 lg:w-20"
             />
             <div>
-              <h3 className="text-red-500 font-bold text-2xl md:text-3xl">
+              <h3 className="text-red-500 font-bold text-xl md:text-3xl">
                 DOWNLOAD A WALLET.
               </h3>
               <p className="text-white">
@@ -39,10 +39,10 @@ const BuyMotionComponent = () => {
             <img
               src={number2}
               alt="Number 2"
-              className="w-12 md:w-16 lg:w-20"
+              className="w-10 md:w-16 lg:w-20"
             />
             <div>
-              <h3 className="text-green-500 font-bold text-2xl md:text-3xl">
+              <h3 className="text-green-500 font-bold text-xl md:text-3xl">
                 SECURE YOUR ETH.
               </h3>
               <p className="text-white">
@@ -58,15 +58,15 @@ const BuyMotionComponent = () => {
             <img
               src={number3}
               alt="Number 3"
-              className="w-12 md:w-16 lg:w-20"
+              className="w-10 md:w-16 lg:w-20"
             />
             <div>
-              <h3 className="text-blue-500 font-bold text-2xl md:text-3xl">
+              <h3 className="text-blue-500 font-bold text-xl md:text-3xl">
                 GET MOTION.
               </h3>
               <p className="text-white">
-                Head to Uniswap to purchase your $BEEF. Paste the $BEEF contract
-                address to swap your SOL into $BEEF.
+                Head to Uniswap to purchase your $MOTION. Paste the $MOTION
+                contract address to swap your ETH into $MOTION.
               </p>
             </div>
           </div>
@@ -74,11 +74,11 @@ const BuyMotionComponent = () => {
       </div>
 
       {/* Right GIF */}
-      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-[30rem] md:w-[35rem] lg:w-[40rem] h-auto">
+      <div className="w-full md:w-auto flex justify-center mt-8 md:mt-0">
         <img
           src={rightGif}
           alt="Motion Circle Right Loop"
-          className="w-full h-auto"
+          className="w-64 md:w-[35rem] lg:w-[40rem] h-auto"
         />
       </div>
     </div>

@@ -1,10 +1,10 @@
-// src/App.jsx
-import { useEffect, useRef } from "react"; // Import hooks for parallax effect
+import { useEffect, useRef } from "react";
 import background from "./assets/background.png";
 import MainMotionComponent from "./MainMotionComponent";
 import MotionTextComponent from "./MotionTextComponent";
 import BuyMotionComponent from "./BuyMotionComponent";
-import TokenomicsComponent from "./TokenomicsComponent.jsx"; // Correct extension
+import TokenomicsComponent from "./TokenomicsComponent.jsx";
+import FooterComponent from "./FooterComponent";
 
 function App() {
   const backgroundRef = useRef(null); // Create a ref for the background div
@@ -36,22 +36,18 @@ function App() {
   return (
     <div
       ref={backgroundRef}
-      className="w-screen min-h-screen bg-no-repeat bg-cover bg-center"
+      className="flex flex-col min-h-screen w-screen bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url(${background})`,
       }}
     >
-      {/* Main Motion Component */}
-      <MainMotionComponent />
-
-      {/* Motion Text Component */}
-      <MotionTextComponent />
-
-      {/* Buy Motion Component */}
-      <BuyMotionComponent />
-
-      {/* Tokenomics Component */}
-      <TokenomicsComponent />
+      <div className="flex-grow">
+        <MainMotionComponent />
+        <MotionTextComponent />
+        <BuyMotionComponent />
+        <TokenomicsComponent />
+      </div>
+      <FooterComponent />
     </div>
   );
 }

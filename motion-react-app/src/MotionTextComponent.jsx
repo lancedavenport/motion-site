@@ -1,37 +1,28 @@
 import doughnutGif from "./assets/motion-doughnut.gif"; // Import doughnut GIF
+import textGif from "./assets/texts.gif"; // Import text GIF
 
 const MotionTextComponent = () => {
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-5">
+    <div className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-center px-8 md:px-16 lg:px-5">
       {/* Doughnut GIF */}
-      <div className="flex-shrink-0 w-96 md:w-[30rem] lg:w-[50rem] mt-8">
-        {" "}
-        {/* Added margin-top to offset text */}
+      <div className="flex-shrink-0 w-full lg:w-1/2 mt-8 flex justify-center">
         <img
           src={doughnutGif}
           alt="Motion Doughnut"
-          className="w-full h-auto"
+          className="w-64 md:w-[30rem] lg:w-[50rem] h-auto"
         />
       </div>
 
       {/* Text Content */}
-      <div className="ml-24 lg:ml-10 text-white max-w-2xl mt-[-40px] mb-12">
-        {" "}
-        {/* Offset text, wider text area */}
+      <div className="w-full lg:w-1/2 text-white max-w-2xl mt-8 lg:mt-0 flex flex-col items-center lg:items-start">
         {/* Heading with gradient text */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-red-500 via-green-500 to-blue-500 text-transparent bg-clip-text mb-4">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-red-500 via-green-500 to-blue-500 text-transparent bg-clip-text mb-4 text-center lg:text-left">
           NO EMOTION. JUST MOTION.
         </h1>
-        {/* Paragraph Text */}
-        <div className="text-lg md:text-xl space-y-3">
-          <p>DO YOU GOT THAT MOTION MOTION?</p>
-          <p>MONEY MOTION.</p>
-          <p>DROP THE E. JUST MOTION.</p>
-          <p>IF YOU&apos;RE NOT FIRST, YOU&apos;RE LAST.</p>
-          <p>I GOT MOTION.</p>
-          <p>I&apos;LL KNOW I HAVE ENOUGH MOTION WHEN I STOP PULLING OUT.</p>
-          <p>MOTION IS FOR WINNERS.</p>
-          <p>IGGY&apos;S BOOTY GOT MOTION.</p>
+
+        {/* Text GIF */}
+        <div className="w-full flex justify-center lg:justify-start pr-0 lg:pr-5">
+          <img src={textGif} alt="Motion Text" className="w-full h-auto" />
         </div>
       </div>
     </div>
