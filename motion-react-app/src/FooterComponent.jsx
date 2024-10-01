@@ -14,7 +14,7 @@ const FooterComponent = () => {
       }}
     >
       {/* Buttons for social links */}
-      <div className="flex flex-row items-center space-y-4 space-y-0 space-x-8 sm: pt-3">
+      <div className="flex pt-2 flex-row items-center space-y-0 space-y-0 space-x-4 md:pt-4 lg:pt-4">
         {/* Telegram Button */}
         <a
           href="https://t.me/yourtelegram"

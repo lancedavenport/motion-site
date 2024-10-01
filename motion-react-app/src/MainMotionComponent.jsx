@@ -44,11 +44,11 @@ const MainMotionComponent = () => {
         className="absolute top-10 right-2 md:top-16 md:right-16 w-20 md:w-36"
       />
       {/* Main Content */}
-      <div className="relative z-10 pt-20 text-center w-full px-4 mt-0 flex flex-col items-center lg:pt-60">
+      <div className="relative z-10 pt-5 mt-0 text-center w-full px-4 flex flex-col items-center md:pt-5 lg:pt-30">
         <img
           src={mainVideo}
           alt="Main Motion Video"
-          className="w-96 md:w-96 lg:w-[32rem] h-auto"
+          className="w-96 md:w-[32rem] h-auto lg:w-[32rem] h-auto"
         />
 
         {/* Contract Address and Buttons */}
@@ -69,7 +69,7 @@ const MainMotionComponent = () => {
           </div>
 
           {/* Buttons with GIFs */}
-          <div className="flex pt-6 flex-row items-center space-y-4 space-y-0 space-x-4">
+          <div className="flex pt-2 flex-row items-center space-y-0 space-y-0 space-x-4 md:pt-6 lg:pt-6">
             {/* Telegram Button */}
             <a
               href="https://t.me/motioncoineth"

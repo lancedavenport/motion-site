@@ -20,7 +20,7 @@ const TokenomicsComponent = () => {
   };
 
   return (
-    <div className="relative w-full text-white flex flex-col items-center justify-center px-8 py-0 md:px-16 lg:px-24 py-40 md: pt-32">
+    <div className="relative w-full text-white flex flex-col items-center justify-center px-8 pt-10 md:px-16 lg:px-24, pt-40 md: pt-32">
       {/* Motion GIF at the top */}
       <div className="absolute top-10 w-full h-16 md:h-40 lg:h-25 z-10">
         <img
@@ -90,7 +90,7 @@ const TokenomicsComponent = () => {
           )}
 
           {/* Buttons with GIFs */}
-          <div className="flex flex-row ustify-center items-center space-x-6 space-y-0 md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+          <div className="flex pt-2 flex-row items-center space-y-0 space-y-0 space-x-4 md:pt-6 lg:pt-6">
             {/* Buy Motion Button */}
             <a
               href="#"

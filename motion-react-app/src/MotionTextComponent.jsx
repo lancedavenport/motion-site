@@ -3,7 +3,7 @@ import textGif from "./assets/texts.gif"; // Import text GIF
 
 const MotionTextComponent = () => {
   return (
-    <div className="relative w-full flex flex-col px-0 lg:flex-row items-center justify-center px-8 md:px-16 lg:px-5">
+    <div className="relative w-full flex flex-col lg:flex-row items-center justify-center md:px-16 lg:px-5">
       {/* Doughnut GIF */}
       <div className="flex-shrink-0 w-full lg:w-1/2 mt-8 flex justify-center">
         <img
